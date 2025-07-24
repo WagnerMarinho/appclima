@@ -1,0 +1,121 @@
+:root {
+    --prim: #c693e4;
+    --sec: #759ec5;
+    --text: #160b18;
+    --back: #ffff;
+}
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Verdana, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#a7bfe4 0%,#c8daf0 50%,   
+  #d9e0eb 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    color: var(--text);
+}
+
+
+
+.main-card{
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.pesquisa-clima{
+    display: flex;
+    padding: 20px;
+
+}
+
+.pesquisa-input{
+    flex: 1;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    outline: none;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.btn-pesquisa{
+    flex: 1;
+    margin-left: 5px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    outline: none;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.btn-pesquisa:hover{
+    background: var(--sec)
+}
+
+.temperatura{
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    background: linear-gradient(to right, var(--prim), var(--sec));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.descrição {
+    font-size: 1.25rem;
+    margin-bottom: 18px;
+    text-transform: capitalize;
+}
+
+.detalhes-container {
+    display: flex;
+    justify-content: space-between; 
+    gap: 10px; 
+    margin-top: 20px;
+    width: 100%;
+}
+
+.card-detalhe{
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.value.detalhe{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.previsao{
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+#previsao-texto{
+    margin-top: 25px;
+}
+
+.card-detalhe:hover{
+    background: #9dc0e0;
+}
