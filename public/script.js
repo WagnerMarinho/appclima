@@ -11,5 +11,4 @@ elementos = {
     loading: document.querySelector(".load"),
     erro: document.querySelector(".erro"),
     climaDisplay: document.querySelector(".display-clima")
-}
-
+}     

@@ -1,0 +1,64 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxygen:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <div class="main-card">
+                <form action="/sendLocale" method="post">
+                    <div class="pesquisa-clima">
+                        <input name="locale" type="search" class="pesquisa-input" value="Rio" placeholder="EX: Lagoa de dentro">
+                        <button class="btn-pesquisa">Pesquisa</button>
+                    </div>
+                </form>
+            <div class="loading">
+                <div class="load">Carregando...</div>
+            </div>
+
+            <div class="erro">
+
+            </div>
+
+            <div class="display-clima">
+                <h1 class="lagoaDeDentro">Lagoa de dentro</h1>
+                <div class="temperatura">--°C</div>
+                <div class="descrição">clima</div>
+
+
+                <div class="detalhes-container">
+                    <div class="detalhe">
+                        <div class="card-detalhe">
+                            <div>Umidd: </div>
+                            <div class="value-umidade">--%</div>
+                        </div>
+                    </div>
+
+                    <div class="card-detalhe">
+                        <div>Vento: </div>
+                        <div class="value-vento">--km/h</div>
+                    </div>
+
+                    <div class="card-detalhe">
+                        <div>Chuva: </div>
+                        <div class="value-chuva">--mm</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 id="previsao-texto">Previsão 7 Dias</h3>
+            <div class="previsao">
+
+            </div>
+
+        </div>
+        </main>
+    </body>
+    </html>

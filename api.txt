@@ -1,0 +1,11 @@
+current.humidity // umuidade
+       .wind_kph // velicidade do vento
+       .last_update // hora da ultima atuzalização
+       .temp_c // graus celsius
+       .windchill_c // sensação termica
+       .is_day (1 = yes 0 = no)// verificar se é dia
+
+forecast.forecastday.day.daily_chance_of_rain // schance de chuva
+                    .hour.time // hora foramatada
+
+forecast.forecastday // e um vetor onde cada elemento e a previsão para uma certa hora do dia
