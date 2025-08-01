@@ -15,45 +15,54 @@
             <div class="main-card">
                 <form action="/sendLocale" method="post">
                     <div class="pesquisa-clima">
-                        <input name="locale" type="search" class="pesquisa-input" value="Rio" placeholder="EX: Lagoa de dentro">
+                        <input name="locale" type="search" class="pesquisa-input" value="Erro :(" placeholder="EX: Lagoa de dentro">
                         <button class="btn-pesquisa">Pesquisa</button>
                     </div>
                 </form>
             <div class="loading">
                 <div class="load"></div>
+
+                
             </div>
 
             <div class="erro">
 
             </div>
 
+            <div class="icon-error">
+                    <img src="img/error-404.png" alt="icon error-404">
+                </div>
+
             <div class="display-clima">
-                <h1 class="lagoaDeDentro"><%= local %></h1>
-                <div class="temperatura"><%= temp %>°C</div>
-                <div class="descrição">clima</div>
+                <h1 class="lagoaDeDentro"><a href="/views/index.ejs">Volte para página principal</a></h1>
+                <!-- <div class="temperatura">--°C</div> -->
+                <div class="descrição"></div>
 
+                
 
-                <div class="detalhes-container">
+                <!-- <div class="detalhes-container">
                     <div class="detalhe">
                         <div class="card-detalhe">
-                            <div>Umidade: </div>
-                            <div class="value-umidade"><%= humidade%>%</div>
+                            <div>Umidd: </div>
+                            <div class="value-umidade">--%</div>
                         </div>
                     </div>
 
                     <div class="card-detalhe">
                         <div>Vento: </div>
-                        <div class="value-vento"><%= vento%>km/h</div>
+                        <div class="value-vento">--km/h</div>
                     </div>
 
                     <div class="card-detalhe">
                         <div>Chuva: </div>
-                        <div class="value-chuva"><%= chuva%>%</div>
+                        <div class="value-chuva">--mm</div>
                     </div>
                 </div>
+            </div> -->
+
+            <!-- <div class="previsao">
+
             </div>
-
-
 
             <h3 id="previsao-texto">Previsão 5 Dias</h3>
             <div class="previsao-dias">
@@ -96,7 +105,8 @@
                     <div class="umidade-dia-5"></div>
                     <div class="vento-dia-5"></div>
                     <div class="chuva-dia-5"></div>
-                </div>
+                </div> -->
+
 
             </div>
 

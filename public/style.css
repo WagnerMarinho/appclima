@@ -3,6 +3,7 @@
     --sec: #759ec5;
     --text: #160b18;
     --back: #ffff;
+    --error: #e4a9a9;
 }
 
 *{
@@ -13,7 +14,7 @@
 }
 
 body{
-    background: linear-gradient(135deg,#a7bfe4 0%,#c8daf0 50%,   
+    background: linear-gradient(135deg,#9fb7da 0%,#9bc4f7 50%,   
   #d9e0eb 100%);
     min-height: 100vh;
     display: flex;
@@ -80,7 +81,8 @@ body{
 .descrição {
     font-size: 1.25rem;
     margin-bottom: 18px;
-    text-transform: capitalize;
+    color: #1d1620;
+    text-decoration: wavy;
 }
 
 .detalhes-container {
@@ -119,3 +121,27 @@ body{
 .card-detalhe:hover{
     background: #9dc0e0;
 }
+
+.previsao-dias{
+    display: flex;
+    justify-content: space-between; 
+    gap: 10px; 
+    margin-top: 20px;
+    width: 100%;
+}
+
+.dia-1, .dia-2, .dia-3, .dia-4, .dia-5{
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 15px;
+    backdrop-filter: blur(3px);
+}
+
+.icon-error{
+    display: flex;
+    width: 8rem;
+    height: 8rem;
+    max-width: 100%;
+
+}
+
