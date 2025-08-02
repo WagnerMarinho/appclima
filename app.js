@@ -2,6 +2,10 @@ const { urlencoded } = require("body-parser");
 const axios =  require("axios").default;
 const express =  require("express");
 const app =  express();
+
+const utils = require("./utils/responseHandler.js");
+const utilsf = require("./utils/format.js")
+
 const port = process.env.PORT || 3200;
 const host = `http://127.0.0.1:${port}`
 
@@ -20,8 +24,8 @@ app.set("view engine", "ejs");
 app.get("/",(_, res)=>{
   res.render("index.ejs");
 })
+
 app.post("/sendLocale", (req, res)=>{
-  let days =  [];
   let paramsApi = {
     q: req.body.locale, //LOCALIZAÇÃO,
     days: 5,
@@ -34,35 +38,21 @@ app.post("/sendLocale", (req, res)=>{
 
   axios.get(urlfull)
        .then(response =>{
-        let baseCurrent = response.data.current;
-        let baseForecastDay =  response.data.forecast.forecastday[0].day;
-        let baseForecastDays = response.data.forecast.forecastday;
-        
-        //filtrar informações 
-        let subVetForecastDaysInf = [];
-        baseForecastDays.forEach(dayinf =>{
-
-          let dayGeneral = dayinf.day;
-
-          let dayUtilInf = {
-            data: dayinf.date,
-            mediatemp: dayGeneral.avgtemp_c,
-            humidade: dayGeneral.avghumidity,
-            vento: dayGeneral.maxwind_kph,
-            chuva: dayGeneral.daily_chance_of_rain
-          }
-          subVetForecastDaysInf.push(dayUtilInf);
+          let baseCurrent = response.data.current;
+          //filtrar informações 
+          res.render("rerend.ejs", {
+            local: response.data.location.name,
+            temp: baseCurrent.temp_c,
+            humidade: baseCurrent.humidity,
+            vento: baseCurrent.wind_kph,
+            chuva: response.data.forecast.forecastday[0].day.daily_chance_of_rain,
+            prev: utils.forecastJson(response.data.forecast.forecastday),
+            days: utilsf.setDaysForecast()
+          });
+        }).catch(e=>{
+          console.log(e)
+          res.render("error.ejs");
         });
-
-        res.render("rerend.ejs", {
-          local: response.data.location.name,
-          temp: baseCurrent.temp_c,
-          humidade: baseCurrent.humidity,
-          vento: baseCurrent.wind_kph,
-          chuva: baseForecastDay.daily_chance_of_rain,
-          prev: subVetForecastDaysInf
-        });
-       });
 })
 
 app.listen(port, ()=>{
