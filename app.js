@@ -28,7 +28,7 @@ app.get("/",(_, res)=>{
 app.post("/sendLocale", (req, res)=>{
   let paramsApi = {
     q: req.body.locale, //LOCALIZAÇÃO,
-    days: 5,
+    days: 6,
     endpoint: `forecast.json` //current = atual, forecast = previsão //DIAS DE PREVISÃO,
   }
 
@@ -38,7 +38,8 @@ app.post("/sendLocale", (req, res)=>{
 
   axios.get(urlfull)
        .then(response =>{
-          let baseCurrent = response.data.current;
+z
+          console.log(response.data.location);
           //filtrar informações 
           res.render("rerend.ejs", {
             local: response.data.location.name,

@@ -9,3 +9,18 @@ forecast.forecastday.day.daily_chance_of_rain // schance de chuva
                     .hour.time // hora foramatada
 
 forecast.forecastday // e um vetor onde cada elemento e a previsão para uma certa hora do dia
+
+SQL
+Struct
+Query
+Language
+
+DQL = DATA QUERY LANGUAGE
+DDL = DATA DEFINE LANGAUGE
+DML = DATA MODIFY LANGAUGE
+
+ORM 
+
+OBJECT
+RELATIONAL
+MAP
