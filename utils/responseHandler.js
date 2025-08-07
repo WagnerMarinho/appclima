@@ -12,6 +12,7 @@ module.exports = {
         }
         subVetForecastDaysInf.push(dayUtilInf);
       });
+      console.log(subVetForecastDaysInf);
       return subVetForecastDaysInf;
   },
 }

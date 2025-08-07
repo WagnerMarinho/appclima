@@ -7,7 +7,7 @@ module.exports = {
 
     for(let i = 1; i <= 5; i++){
       console.log(numbDay)
-      if(numbDay == 6){
+      if(numbDay == 6){ 
         daysOrder.push(daysSig[numbDay-1]);
         numbDay = 1;
       }else if(numbDay == 0){

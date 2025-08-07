@@ -24,3 +24,58 @@ ORM
 OBJECT
 RELATIONAL
 MAP
+
+app.post("/sendLocale", (req, res)=>{
+  let paramsApi = {
+    q: req.body.locale, //LOCALIZAÇÃO,
+    days: 6,
+    endpoint: `forecast.json` //current = atual, forecast = previsão //DIAS DE PREVISÃO,
+  }
+
+  let urlfull = `${coreApi.baseUrl}/${paramsApi.endpoint}?key=${coreApi.key}&q=${paramsApi.q}&days=${paramsApi.days}&lang=${coreApi.lang}`;
+
+  console.log(urlfull);
+
+  axios.get(urlfull)
+       .then(response =>{
+z
+          console.log(response.data.location);
+          //filtrar informações 
+          res.render("rerend.ejs", {
+            local: response.data.location.name,
+            temp: baseCurrent.temp_c,
+            humidade: baseCurrent.humidity,
+            vento: baseCurrent.wind_kph,
+            chuva: response.data.forecast.forecastday[0].day.daily_chance_of_rain,
+            prev: utils.forecastJson(response.data.forecast.forecastday),
+            days: utilsf.setDaysForecast()
+          });
+        }).catch(e=>{
+          console.log(e)
+          res.render("error.ejs");
+        });
+})
+
+
+
+const coreApi = {
+  baseUrl : "http://api.weatherapi.com/v1",
+  key: "d8aee1ec792143a88c8234714252307",
+  lang: "pt" // IDIOMA,
+}
+
+ <div class="dia-4">
+                    <div><%= days[3] %></div>
+                    <div class="temperatura-dia-4"><%= prev[3].mediatemp %></div>
+                    <div class="umidade-dia-4"><%= prev[3].humidade %></div>
+                    <div class="vento-dia-4"><%= prev[3].vento %></div>
+                    <div class="chuva-dia-4"><%= prev[3].chuva %></div>
+                </div>
+
+                <div class="dia-5">
+                    <div><%= days[4] %></div>
+                    <div class="temperatura-dia-5"><%= prev[3].mediatemp %></div>
+                    <div class="umidade-dia-5"><%= prev[3].humidade %></div>
+                    <div class="vento-dia-5"><%= prev[3].vento %></div>
+                    <div class="chuva-dia-5"><%= prev[3].chuva %></div>
+                </div>
