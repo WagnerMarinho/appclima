@@ -6,7 +6,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxygen:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="login.css">
         <script src="script.js" ></script>
         <title>Document</title>
     </head>
@@ -14,34 +14,17 @@
         <main>
             <div class="main-card">
                 <form action="/sendLocale" method="post">
-                    <div class="pesquisa-clima">
-                        <input name="locale" type="search" class="pesquisa-input" value="Erro :(" placeholder="EX: Lagoa de dentro">
-                        <button class="btn-pesquisa">Pesquisa</button>
-                    </div>
+                    <h1 class="lagoaDeDentro">Faça Login</h1>
+                    <input name="email" type="email" class="pesquisa-input" value="" placeholder="E-mail">
+                    <input name="password" type="password" class="pesquisa-input" value="" placeholder="Senha">
+                    <br>
+                    <button class="btn-pesquisa">Fazer Login</button>
+                    <br>
+                    <p >Ainda não tem login? <a href="">Cadastre-se</a></p>
                 </form>
-            <div class="loading">
-                <div class="load"></div>
-
-                
-            </div>
-
-            <div class="erro">
 
             </div>
 
-            <div class="icon-error">
-                    <img src="img/error-404.png" alt="icon error-404">
-                </div>
-
-            <div class="display-clima">
-                <h1 class="lagoaDeDentro"><a href="/">Volte para página principal</a></h1>
-                <!-- <div class="temperatura">--°C</div> -->
-                <div class="descrição"></div>
-
-
-            </div>
-
-        </div>
         </main>
     </body>
     </html>

@@ -1,0 +1,99 @@
+:root {
+    --prim: #c693e4;
+    --sec: #759ec5;
+    --text: #160b18;
+    --back: #ffff;
+    --error: #e4a9a9;
+}
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Verdana, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#9fb7da 0%,#9bc4f7 50%,   
+  #d9e0eb 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    color: var(--text);
+}
+
+h1{
+    margin-bottom: 15px;
+}
+
+
+
+.main-card{
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.pesquisa-clima{
+    display: flex;
+    padding: 20px;
+
+}
+
+.pesquisa-input{
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    font-size: 15px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.btn-pesquisa{
+    margin-bottom: 3rem;
+    margin-left: 5px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.btn-pesquisa:hover{
+    background: var(--sec)
+}
+
+.temperatura{
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    background: linear-gradient(to right, var(--prim), var(--sec));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.descrição {
+    font-size: 1.25rem;
+    margin-bottom: 18px;
+    color: #1d1620;
+    text-decoration: wavy;
+}
+
+.detalhes-container {
+    display: flex;
+    justify-content: space-between; 
+    gap: 10px; 
+    margin-top: 20px;
+    width: 100%;
+}
